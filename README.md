@@ -1,4 +1,6 @@
 # user_activity — GitHub user activity CLI
+![Rust CI](https://github.com/rajeshkumarrobert/user-activity/actions/workflows/ci.yml/badge.svg)
+
 Project idea got from [roadmap.sh](https://roadmap.sh/projects/github-user-activity)
 
 A small, focused Rust CLI that fetches and prints recent public events for a GitHub user.
