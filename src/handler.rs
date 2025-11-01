@@ -73,55 +73,55 @@ pub async fn print_activites(body:Vec<Response>) -> Result<(),Error>{
         EventType::PushEvent =>{
             for (repo,commits) in &push_event_details{
                 let result = format!("{} Pushed {} commits to {}",commits[0].0, commits[0].1, repo);
-                eprintln!("{}",result);
+                println!("{}",result);
             }
         },
         EventType::CreateEvent =>{
             for (repo,_) in &create_event_details{
                 let result = format!("Created new repo {}", repo);
-                eprintln!("{}",result);
+                println!("{}",result);
             }
         },
         EventType::ForkEvent =>{
             for (repo,_) in &fork_event_details{
                 let result = format!("Forked the repo {}", repo);
-                eprintln!("{}",result);
+                println!("{}",result);
             }
         },
         EventType::WatchEvent =>{
             for (repo,_) in &watch_event_details{
                 let result = format!("Starred the repo {}", repo);
-                eprintln!("{}",result);
+                println!("{}",result);
             }
         },
         EventType::PublicEvent =>{
             for (repo,_) in &public_event_details{
                 let result = format!("Made this {} repo as public", repo);
-                eprintln!("{}",result);
+                println!("{}",result);
             }
         },
         EventType::IssueCommentEvent =>{
             for (repo,commit) in &issue_comment_event_details{
                 let result = format!("Commented {} messgaes in repo {}", commit, repo);
-                eprintln!("{}",result);
+                println!("{}",result);
             }
         },
         EventType::IssuesEvent =>{
             for (repo,commit) in &issue_event_details{
                 let result = format!("Created new {} issues in repo {},", commit, repo);
-                eprintln!("{}",result);
+                println!("{}",result);
             }
         },
         EventType::PullRequestEvent =>{
             for (repo,_) in &pull_request_details{
                 let result = format!("Created new pullrequest in repo {}", repo);
-                eprintln!("{}",result);
+                println!("{}",result);
             }
         },
         EventType::Unknown =>{
             for (repo,_) in &unknown_event_details{
                 let result = format!("User did somthing in repo {}", repo);
-                eprintln!("{}",result);
+                println!("{}",result);
             }
         }
     }
